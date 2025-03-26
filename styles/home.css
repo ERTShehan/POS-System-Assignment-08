@@ -1,0 +1,15 @@
+.card-img {
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+  }
+  .count-field {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+  }
+  .card-body-relative {
+    position: relative;
+    padding-bottom: 40px;
+  }
