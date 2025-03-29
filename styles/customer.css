@@ -1,0 +1,137 @@
+#customerManagement .management-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+#customerManagement .customer-container {
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    flex: 1 1 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 300px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#customerManagement .table-container {
+    flex: 1 1 600px;
+    min-width: 300px;
+    border: 1px solid black;
+    padding: 12px;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+    #customerManagement .management-section {
+        flex-direction: column;
+    }
+    
+    #customerManagement .customer-container,
+    #customerManagement .table-container {
+        max-width: 100%;
+        flex: 1 1 auto;
+    }
+}
+
+.customer-container #registrationForm .input-group {
+    margin-bottom: 20px;
+}
+
+.customer-container #registrationForm .input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.customer-container #registrationForm .input-group input {
+    width: 95%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.customer-container #registrationForm .btn {
+    color: #fff;
+    cursor: pointer;
+}
+
+.customer-container #registrationForm .customer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.customer-container #registrationForm .customer-buttons button {
+    flex: 1 1 100px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.customer-container #registrationForm .customer-buttons .save {
+    background-color: #007bff;
+}
+
+.customer-container #registrationForm .customer-buttons .remove {
+    background-color: #dc3545;
+}
+
+.customer-container #registrationForm .customer-buttons .update {
+    background-color: goldenrod;
+}
+
+.customer-container #registrationForm .customer-buttons .get {
+    background-color: green;
+}
+
+.customer-container #registrationForm .customer-buttons .clear {
+    background-color: red;
+}
+
+.customer-container #registrationForm .customer-buttons .save:hover {
+    background-color: blue;
+}
+
+.customer-container #registrationForm .customer-buttons .remove:hover {
+    background-color: brown;
+}
+
+.customer-container #registrationForm .customer-buttons .update:hover {
+    background-color: orangered;
+}
+
+.customer-container #registrationForm .customer-buttons .get:hover {
+    background-color: darkgreen;
+}
+
+.customer-container #registrationForm .customer-buttons .clear:hover {
+    background-color: darkred;
+}
+
+.customer-container .error {
+    color: red;
+    margin-top: 2px;
+    font-size: 10px;
+}
+
+#customerManagement .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#customerManagement .table-container th,
+#customerManagement .table-container td {
+    border: 1px solid black;
+    padding: 6px;
+    text-align: left;
+}
+
+#customerManagement .table-container th {
+    background-color: red;
+    color: white;
+}

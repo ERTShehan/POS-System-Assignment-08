@@ -1,0 +1,138 @@
+/* Item Management Styles */
+#itemManagement .management-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+#itemManagement .item-container {
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    flex: 1 1 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 300px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#itemManagement .table-container {
+    flex: 1 1 600px;
+    min-width: 300px;
+    border: 1px solid black;
+    padding: 12px;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+    #itemManagement .management-section {
+        flex-direction: column;
+    }
+    
+    #itemManagement .item-container,
+    #itemManagement .table-container {
+        max-width: 100%;
+        flex: 1 1 auto;
+    }
+}
+
+.item-container #itemForm .input-group {
+    margin-bottom: 20px;
+}
+
+.item-container #itemForm .input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.item-container #itemForm .input-group input {
+    width: 95%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.item-container #itemForm .btn {
+    color: #fff;
+    cursor: pointer;
+}
+
+.item-container #itemForm .item-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item-container #itemForm .item-buttons button {
+    flex: 1 1 100px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.item-container #itemForm .item-buttons .save {
+    background-color: #007bff;
+}
+
+.item-container #itemForm .item-buttons .remove {
+    background-color: #dc3545;
+}
+
+.item-container #itemForm .item-buttons .update {
+    background-color: goldenrod;
+}
+
+.item-container #itemForm .item-buttons .get {
+    background-color: green;
+}
+
+.item-container #itemForm .item-buttons .clear {
+    background-color: red;
+}
+
+.item-container #itemForm .item-buttons .save:hover {
+    background-color: blue;
+}
+
+.item-container #itemForm .item-buttons .remove:hover {
+    background-color: brown;
+}
+
+.item-container #itemForm .item-buttons .update:hover {
+    background-color: orangered;
+}
+
+.item-container #itemForm .item-buttons .get:hover {
+    background-color: darkgreen;
+}
+
+.item-container #itemForm .item-buttons .clear:hover {
+    background-color: darkred;
+}
+
+.item-container .error {
+    color: red;
+    margin-top: 2px;
+    font-size: 10px;
+}
+
+#itemManagement .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#itemManagement .table-container th,
+#itemManagement .table-container td {
+    border: 1px solid black;
+    padding: 6px;
+    text-align: left;
+}
+
+#itemManagement .table-container th {
+    background-color: red;
+    color: white;
+}

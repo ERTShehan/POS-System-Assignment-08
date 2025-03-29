@@ -1,0 +1,169 @@
+.order-container .Invoice-container {
+    font-family: Arial, sans-serif;
+    max-width: 50%;
+    flex: 1 1 400px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 300px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.order-container .Invoice-container h2 {
+    background-color: green;
+    color: white;
+    padding: 10px;
+}
+
+.order-container #orderInvoiceForm .input-group {
+    margin-bottom: 15px;
+}
+
+.order-container #orderInvoiceForm .input-group label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.order-container #orderInvoiceForm .input-group input{
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+.order-container .Invoice-container #orderInvoiceForm .invoice1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.order-container .select-item {
+    font-family: Arial, sans-serif;
+    max-width: 50%;
+    flex: 1 1 400px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 300px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.order-container .select-item h2 {
+    background-color: green;
+    color: white;
+    padding: 10px;
+}
+
+.order-container .select-item #orderItemForm .input-group {
+    margin-bottom: 15px;
+}
+.order-container .select-item #orderItemForm .input-group label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.order-container .select-item #orderItemForm .input-group input{
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+.order-container .select-item #orderItemForm .item1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.order-container .select-item #orderItemForm .item2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.order-container .select-item #orderItemForm .addBtn {
+    /* background-color: red; */
+    color: white;
+    padding: 8px;
+    button:hover {
+        background-color: darkred;
+        color: white;
+    }
+
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 25%;
+}
+
+.order-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+#orderManagement .order-container .purchase-container #purchase-form #total {
+    color: lightskyblue;
+}
+
+#orderManagement .order-container .purchase-container #purchase-form #subTotal {
+    color: lightcoral;
+}
+
+.order-container .purchase-container #purchase-form {
+    font-family: Arial, sans-serif;
+    /* max-width: 50%; */
+    /* flex: 1 1 400px; */
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    /* min-width: 300px; */
+    /* margin-top: 15px;
+    margin-bottom: 15px; */
+}
+
+.order-container .purchase-container {
+    margin-top: 15px;
+}
+
+.order-container .purchase-container #purchase-form .input-group {
+    margin-bottom: 15px;
+}
+
+.order-container .purchase-container #purchase-form .input-group label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.order-container .purchase-container #purchase-form .input-group input{
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+/* .order-container .purchase-container #purchase-form .purchase1 { */
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+/* } */
+
+.order-container .purchase-container #purchase-form .purchaseBtn {
+    /* background-color: green; */
+    color: white;
+    button:hover {
+        background-color: darkgreen;
+        color: white;
+    }
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 25%;
+}
