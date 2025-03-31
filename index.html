@@ -138,15 +138,15 @@
                   alt="Settings"
                   class="card-img img-fluid d-block mx-auto"
                 />
-                <div class="input-group count-field">
+                <!-- <div class="input-group count-field">
                   <input
                     type="text"
                     class="form-control"
                     placeholder="Count"
                     id="settingCount"
-                  />
-                  <span class="input-group-text">#</span>
-                </div>
+                  /> -->
+                <!-- <span class="input-group-text">#</span> -->
+                <!-- </div> -->
               </div>
             </div>
           </div>
@@ -155,19 +155,6 @@
 
       <!-- Customer Management Content -->
       <div id="customerManagement" class="management-section">
-        <div class="card management-card">
-          <div class="card-header bg-danger text-white">
-            Customer Management
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Customer Management System</h5>
-            <p class="card-text">
-              Manage your customers here. Add, edit, or delete customer records.
-            </p>
-            <!-- Customer management content would go here -->
-          </div>
-        </div>
-
         <!-- ====================================================================================== -->
         <div class="customer-container">
           <h2>Customer Registration</h2>
@@ -220,18 +207,6 @@
 
       <!-- Item Management Content -->
       <div id="itemManagement" class="management-section">
-        <div class="card management-card">
-          <div class="card-header bg-danger text-white">Item Management</div>
-          <div class="card-body">
-            <h5 class="card-title">Item Management System</h5>
-            <p class="card-text">
-              Manage your inventory items here. Add, edit, or delete product
-              records.
-            </p>
-            <!-- Item management content would go here -->
-          </div>
-        </div>
-
         <!-- Item Form -->
         <div class="item-container">
           <h2>Item Registration</h2>
@@ -290,17 +265,6 @@
 
       <!-- Order Management Content -->
       <div id="orderManagement" class="management-section">
-        <div class="card management-card">
-          <div class="card-header bg-danger text-white">Order Management</div>
-          <div class="card-body">
-            <h5 class="card-title">Order Management System</h5>
-            <p class="card-text">
-              Manage your orders here. Create, view, or process customer orders.
-            </p>
-            <!-- Order management content would go here -->
-          </div>
-        </div>
-
         <div class="order-container">
           <div class="Invoice-container">
             <h2>Invoice Details</h2>
@@ -318,7 +282,10 @@
                 </div>
                 <div class="input-group">
                   <label for="customer">Customer:</label>
-                  <input type="text" id="customer" name="customer" />
+                  <select name="select-customer" id="select-customer">
+                    <option value="">Select Customer</option>
+                  </select>
+                  <!-- <input type="text" id="customer" name="customer" /> -->
                   <span class="error" id="customerError"></span>
                 </div>
                 <div class="input-group">
@@ -433,6 +400,21 @@
             </form>
           </div>
         </div>
+
+        <div class="table-container">
+          <table id="orderTable">
+            <thead>
+              <tr>
+                <th>Item Code</th>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
     </main>
 
@@ -441,103 +423,16 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Initialize all count fields
-        const countFields = {
-          customer: document.getElementById("customerCount"),
-          item: document.getElementById("itemCount"),
-          order: document.getElementById("orderCount"),
-          setting: document.getElementById("settingCount"),
-        };
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        // Set initial values
-        Object.values(countFields).forEach((field) => {
-          field.value = "0";
-        });
-
-        // Navigation elements
-        const pageTitle = document.getElementById("pageTitle");
-        const dashboardContent = document.getElementById("dashboardContent");
-        const homeLink = document.getElementById("homeLink");
-        const customerLink = document.getElementById("customerLink");
-        const itemLink = document.getElementById("itemLink");
-        const orderLink = document.getElementById("orderLink");
-
-        // Management sections
-        const sections = {
-          dashboard: dashboardContent,
-          customer: document.getElementById("customerManagement"),
-          item: document.getElementById("itemManagement"),
-          order: document.getElementById("orderManagement"),
-        };
-
-        // Navigation links
-        const navLinks = {
-          home: homeLink,
-          customer: customerLink,
-          item: itemLink,
-          order: orderLink,
-        };
-
-        // Function to show a specific section
-        function showSection(sectionName) {
-          // Hide all sections
-          Object.values(sections).forEach((section) => {
-            section.style.display = "none";
-          });
-
-          // Show the selected section
-          sections[sectionName].style.display = "block";
-
-          // Update page title
-          pageTitle.textContent =
-            sectionName.charAt(0).toUpperCase() +
-            sectionName.slice(1) +
-            (sectionName === "dashboard" ? "" : " Management");
-
-          // Update active link
-          Object.values(navLinks).forEach((link) => {
-            link.classList.remove("active");
-          });
-          if (sectionName === "dashboard") {
-            navLinks.home.classList.add("active");
-          } else {
-            navLinks[sectionName].classList.add("active");
-          }
-        }
-
-        // Set up event listeners
-        homeLink.addEventListener("click", function (e) {
-          e.preventDefault();
-          showSection("dashboard");
-        });
-
-        customerLink.addEventListener("click", function (e) {
-          e.preventDefault();
-          showSection("customer");
-        });
-
-        itemLink.addEventListener("click", function (e) {
-          e.preventDefault();
-          showSection("item");
-        });
-
-        orderLink.addEventListener("click", function (e) {
-          e.preventDefault();
-          showSection("order");
-        });
-
-        // Initialize with dashboard view
-        showSection("dashboard");
-
-        // Add event listeners for all count fields
-        Object.entries(countFields).forEach(([key, field]) => {
-          field.addEventListener("change", function () {
-            console.log(`${key} count updated to:`, this.value);
-          });
-        });
-      });
-    </script>
+    <script src="/controller/CustomerController.js"></script>
+    <script src="/controller/IndexController.js"></script>
+    <script src="/controller/ItemController.js"></script>
+    <script src="/controller/OrderController.js"></script>
+    <script src="/db/DB.js"></script>
+    <script src="/model/Customer.js"></script>
+    <script src="/model/Item.js"></script>
+    <script src="/model/Order.js"></script>
+    <script src="/model/OrderDetails.js"></script>
   </body>
 </html>
